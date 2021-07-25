@@ -11,9 +11,11 @@ func init() {
 }
 
 func Routes(g *gin.Engine) {
+	// 健康检查
+	g.GET("/ping", Ping)
+	
 	hello := g.Group("v1")
 	{
-		hello.GET("/hello", v1.Hello)
 		hello.GET("/getUser", v1.GetUser)
 	}
 }
