@@ -18,6 +18,8 @@ func RegisterRouter(router ...Router)  {
 
 // 初始化路由
 func IniterRouter() *gin.Engine  {
+	// 默认启动方式，包含 Logger、Recovery 中间件
+	// r := gin.New()
 	r := gin.Default()
 	
 	// 注册中间件
