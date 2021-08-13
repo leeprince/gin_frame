@@ -13,5 +13,8 @@ func GetUser(c *gin.Context)  {
 	userList := services.GetUsers(map[string]interface{}{
 		"id": userId,
 	})
-	c.JSON(http.StatusOK, userList)
+	// c.JSON(http.StatusOK, userList)
+	c.JSON(http.StatusOK, gin.H{
+		"userList": userList,
+	})
 }
